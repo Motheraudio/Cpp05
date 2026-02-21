@@ -46,7 +46,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 std::ostream &operator<<(std::ostream &os, const RobotomyRequestForm &obj)
 {
   std::cout << "Form: " << obj.getFormName()
-            << " Sign gade: " << obj.getSignGrade()
+            << " Sign grade: " << obj.getSignGrade()
             << " Execute grade: " << obj.getExecuteGrade()
             << " Is it signed: " << obj.getIfSigned();
   return (os);

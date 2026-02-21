@@ -50,7 +50,7 @@ bool Form::getIfSigned() const { return this->issigned; }
 std::ostream &operator<<(std::ostream &os, const Form &obj)
 {
   std::cout << "Form: " << obj.getFormName()
-            << " Sign gade: " << obj.getSignGrade()
+            << " Sign grade: " << obj.getSignGrade()
             << " Execute grade: " << obj.getExecuteGrade()
             << " Is it signed: " << obj.getIfSigned();
   return (os);
