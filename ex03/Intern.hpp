@@ -13,7 +13,9 @@ public:
 
   AForm *makeForm(const std::string &formname, const std::string &formtarget);
 private:
-	AForm *forms[3];
-  std::string names[3];
+	std::string names[3];
+  AForm *createPresidentialPardon(const std::string &formtarget);
+  AForm *createRobotomyRequestForm(const std::string &formtarget);
+  AForm *createShrubberyCreationForm(const std::string &formtarget);
 };
 

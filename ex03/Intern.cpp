@@ -20,18 +20,31 @@ Intern& Intern::operator=(const Intern& obj){
 	this->names[2] = obj.names[2];
 return (*this);
 }
+AForm *Intern::createPresidentialPardon(const std::string &formtarget)
+{
+	return new PresidentialPardonForm(formtarget);
+}
+AForm *Intern::createRobotomyRequestForm(const std::string &formtarget)
+{
 
+	return new RobotomyRequestForm(formtarget);
+}
+AForm *Intern::createShrubberyCreationForm(const std::string &formtarget)
+{
+	return new ShrubberyCreationForm(formtarget);
+
+}
 AForm *Intern::makeForm(const std::string &formname, const std::string &formtarget)
 {
-	*this->forms[0] = ShrubberyCreationForm(formtarget);
-	*this->forms[1] = RobotomyRequestForm(formtarget);
-	*this->forms[2] = PresidentialPardonForm(formtarget);
+	AForm* (Intern::*f[3])(const std::string&) = {&Intern::createPresidentialPardon, &Intern::createShrubberyCreationForm, &Intern::createRobotomyRequestForm}; 
 	for (int i = 0; i < 3; i++)
+	{
 		if (this->names[i] == formname)
 		{
 			std::cout << "Intern creates " << formname << std::endl;
-			return (this->forms[i]);
+			return ((this->*f[i])(formtarget));
 		}
+	}
 	std::cout << formname << " Does not exist. No form created." << std::endl;
 	return (NULL);
 }
