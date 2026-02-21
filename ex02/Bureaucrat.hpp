@@ -3,7 +3,7 @@
 #include <exception>
 #include <iostream>
 #include <string>
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -13,6 +13,7 @@ public:
   Bureaucrat(const Bureaucrat &obj);
   virtual ~Bureaucrat();
   Bureaucrat &operator=(const Bureaucrat &obj);
+
   class GradeTooHighException : public std::exception
   {
     const char *what() const throw();
@@ -22,11 +23,13 @@ public:
     const char *what() const throw();
   };
   std::string getName() const;
+
   int getGrade() const;
   void increaseGrade();
   void decreaseGrade();
-  void signForm(Form &form);
+  void signForm(AForm &form);
 
+  void executeForm(AForm const & form) const;
 private:
   const std::string name;
   int grade;

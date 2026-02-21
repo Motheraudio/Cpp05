@@ -69,11 +69,11 @@ byebye:(
 endef
 export RAT
 export GOODBYE
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 OBJECTS = ${SRCS:.cpp=.o}
 OBJDIR = obj
 OBJECTFILES = $(addprefix $(OBJDIR)/, $(OBJECTS))
-HEADERS = Bureaucrat.hpp AForm.hpp
+HEADERS = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp
 CXX = c++
 CXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 $(OBJDIR)/%.o: %.cpp $(HEADERS)

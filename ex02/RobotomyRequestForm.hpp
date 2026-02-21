@@ -1,18 +1,27 @@
 #pragma once
 
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 #include <iostream>
-
-class RobotomyRequestForm {
+class RobotomyRequestForm : public AForm
+{
 public:
   RobotomyRequestForm();
-  RobotomyRequestForm(const RobotomyRequestForm& obj);
+  RobotomyRequestForm(const std::string &target);
+  RobotomyRequestForm(const RobotomyRequestForm &obj);
   ~RobotomyRequestForm();
-
-  RobotomyRequestForm& operator=(const RobotomyRequestForm& obj);
-
+  RobotomyRequestForm &operator=(const RobotomyRequestForm &obj);
+  void execute(Bureaucrat const & executor) const;
+  // class NoTargetException : public std::exception
+  // {
+  //   const char *what() const throw();
+  // };
+  class NotSignedException: public std::exception
+	{
+		const char *what() const throw();
+	};
 private:
-  // TODO: add members
+  std::string target;
 };
 
-std::ostream&	operator<<(std::ostream& os, const RobotomyRequestForm&obj);
-
+std::ostream &operator<<(std::ostream &os, const RobotomyRequestForm &obj);

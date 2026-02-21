@@ -26,7 +26,7 @@ public:
   int getSignGrade() const;
   int getExecuteGrade() const;
   bool getIfSigned() const;
-
+  virtual void execute(Bureaucrat const & executor) const = 0;
 private:
   std::string const name;
   bool issigned;
