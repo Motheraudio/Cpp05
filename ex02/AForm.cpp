@@ -43,13 +43,13 @@ AForm &AForm::operator=(const AForm &obj)
   return (*this);
 }
 
-std::string AForm::getAFormName() const { return this->name; }
+std::string AForm::getFormName() const { return this->name; }
 int AForm::getSignGrade() const { return this->signgrade; }
 int AForm::getExecuteGrade() const { return this->executegrade; }
 bool AForm::getIfSigned() const { return this->issigned; }
 std::ostream &operator<<(std::ostream &os, const AForm &obj)
 {
-  std::cout << "Form: " << obj.getAFormName()
+  std::cout << "Form: " << obj.getFormName()
             << " Sign gade: " << obj.getSignGrade()
             << " Execute grade: " << obj.getExecuteGrade()
             << " Is it signed: " << obj.getIfSigned();

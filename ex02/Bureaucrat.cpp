@@ -1,5 +1,5 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
   return "Grade too high";

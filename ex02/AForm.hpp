@@ -22,7 +22,7 @@ public:
   };
 
   void beSigned(Bureaucrat &who);
-  std::string getAFormName() const;
+  std::string getFormName() const;
   int getSignGrade() const;
   int getExecuteGrade() const;
   bool getIfSigned() const;
